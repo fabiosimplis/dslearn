@@ -2,6 +2,8 @@ package br.com.fjunior.dslearn.entities;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -13,6 +15,8 @@ public class Course {
     private String name;
     private String imgUri;
     private String imgGrayUri;
+    @OneToMany(mappedBy = "course")
+    private List<Offer> offers = new ArrayList<>();
 
     public Course(){
     }
@@ -62,6 +66,10 @@ public class Course {
         if (o == null || getClass() != o.getClass()) return false;
         Course course = (Course) o;
         return Objects.equals(getId(), course.getId());
+    }
+
+    public List<Offer> getOffers(){
+        return offers;
     }
 
     @Override
