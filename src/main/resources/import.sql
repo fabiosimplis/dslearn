@@ -24,3 +24,7 @@ INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) 
 INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Forum HTML5', 'Tirar dúvidas', 2, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9IUMiBUfucWPl5p1p6eleNS0j4rsFPh8yWw&s', 2, 1);
 INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Lives', 'Lives exclusivas para a turma', 3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9IUMiBUfucWPl5p1p6eleNS0j4rsFPh8yWw&s', 0, 1);
 INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Trilha CSS3', 'Trilha para aprendizado de CSS3', 4, 'https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg', 1, 2);
+
+INSERT INTO tb_section(title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Capítulo 1', 'Introdução ao HTML', 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9IUMiBUfucWPl5p1p6eleNS0j4rsFPh8yWw&s', 1, null);
+INSERT INTO tb_section(title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Capítulo 2', 'Tags do HTML', 2, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9IUMiBUfucWPl5p1p6eleNS0j4rsFPh8yWw&s', 1, 1);
+INSERT INTO tb_section(title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Capítulo 3', 'Semântica do HTML', 3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9IUMiBUfucWPl5p1p6eleNS0j4rsFPh8yWw&s', 1, 2);
