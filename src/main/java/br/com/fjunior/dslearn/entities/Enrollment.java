@@ -27,6 +27,9 @@ public class Enrollment {
     @ManyToMany(mappedBy="enrollmentsDone")
     private Set<Lesson> lessonsDone = new HashSet<>();
 
+    @ManyToMany(mappedBy="enrollment")
+    private Set<Deliver> deliveries = new HashSet<>();
+
     public Enrollment(){}
 
     public Enrollment(User user, Offer offer, Instant enrollMoment, Instant refundMoment, boolean avaliable,
@@ -89,5 +92,9 @@ public class Enrollment {
 
     public Set<Lesson> getLessonsDone() {
         return lessonsDone;
+    }
+
+    public Set<Deliver> getDeliveries() {
+        return deliveries;
     }
 }

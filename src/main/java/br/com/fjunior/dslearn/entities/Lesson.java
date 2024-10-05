@@ -13,6 +13,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -30,6 +31,9 @@ public abstract class Lesson {
     @ManyToOne
     @JoinColumn(name="section_id")
     private Section section;
+
+    @OneToMany(mappedBy= "lesson")
+    private Set<Deliver> deliveries = new HashSet<>();
 
     @ManyToMany
     @JoinTable(name = "tb_lessons_done",
@@ -84,6 +88,10 @@ public abstract class Lesson {
 
     public Set<Enrollment> getEnrollmentsDone() {
         return enrollmentsDone;
+    }
+
+    private Set<Deliver> getDeliveries() {
+        return deliveries;
     }
 
     @Override
