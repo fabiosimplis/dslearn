@@ -106,6 +106,10 @@ public class Section {
         this.prerequisite = prerequisite;
     }
 
+    public Set<Lesson> getLessons() {
+        return lessons;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
