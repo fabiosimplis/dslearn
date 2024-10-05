@@ -28,3 +28,6 @@ INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) 
 INSERT INTO tb_section(title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Capítulo 1', 'Introdução ao HTML', 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9IUMiBUfucWPl5p1p6eleNS0j4rsFPh8yWw&s', 1, null);
 INSERT INTO tb_section(title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Capítulo 2', 'Tags do HTML', 2, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9IUMiBUfucWPl5p1p6eleNS0j4rsFPh8yWw&s', 1, 1);
 INSERT INTO tb_section(title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Capítulo 3', 'Semântica do HTML', 3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9IUMiBUfucWPl5p1p6eleNS0j4rsFPh8yWw&s', 1, 2);
+
+INSERT INTO tb_enrollment(user_id, offer_id, enroll_Moment, refund_Moment, avaliable, only_Update) VALUES (1, 1,TIMESTAMP WITH TIME ZONE '2020-11-20T13:00:00Z', null, true, false);
+INSERT INTO tb_enrollment(user_id, offer_id, enroll_Moment, refund_Moment, avaliable, only_Update) VALUES (2, 1,TIMESTAMP WITH TIME ZONE '2020-11-20T13:10:00Z', null, true, false);
