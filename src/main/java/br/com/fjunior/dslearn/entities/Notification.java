@@ -1,5 +1,8 @@
 package br.com.fjunior.dslearn.entities;
 
+import java.time.Instant;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,6 +19,8 @@ public class Notification {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String text;
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+    private Instant moment;
     private boolean read;
     private String route;
 
@@ -26,12 +31,23 @@ public class Notification {
     public Notification() {
     }
 
-    public Notification(Long id, String text, boolean read, String route, User user) {
+    public Notification(Long id, String text, Instant moment, boolean read, String route, User user) {
         this.id = id;
         this.text = text;
+        this.moment = moment;
         this.read = read;
         this.route = route;
         this.user = user;
+    }
+
+    
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        return result;
     }
 
     public Long getId() {
@@ -48,6 +64,14 @@ public class Notification {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public Instant getMoment() {
+        return moment;
+    }
+
+    public void setMoment(Instant moment) {
+        this.moment = moment;
     }
 
     public boolean isRead() {
@@ -75,14 +99,6 @@ public class Notification {
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        return result;
-    }
-
-    @Override
     public boolean equals(Object obj) {
         if (this == obj)
             return true;
@@ -98,5 +114,4 @@ public class Notification {
             return false;
         return true;
     }
-
 }

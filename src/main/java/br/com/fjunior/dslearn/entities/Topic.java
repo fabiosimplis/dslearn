@@ -32,7 +32,7 @@ public class Topic {
     private Instant moment;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "author_id")
     private User author;
     
     @ManyToOne
@@ -48,7 +48,7 @@ public class Topic {
 	private Reply answer;
 
     @ManyToMany
-    @JoinTable(name = "tb_topic-likes",
+    @JoinTable(name = "tb_topic_likes",
         joinColumns = @JoinColumn(name = "topic_id"),
         inverseJoinColumns = @JoinColumn(name = "user_id")
     )
