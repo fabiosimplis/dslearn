@@ -1,11 +1,14 @@
 package br.com.fjunior.dslearn.entities;
 
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 
 import br.com.fjunior.dslearn.entities.pk.EnrollmentPK;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -20,6 +23,9 @@ public class Enrollment {
     private Instant refundMoment;
     private boolean avaliable;
     private boolean onlyUpdate;
+
+    @ManyToMany(mappedBy="enrollmentsDone")
+    private Set<Lesson> lessonsDone = new HashSet<>();
 
     public Enrollment(){}
 
@@ -81,5 +87,7 @@ public class Enrollment {
         this.onlyUpdate = onlyUpdate;
     }
 
-
+    public Set<Lesson> getLessonsDone() {
+        return lessonsDone;
+    }
 }
