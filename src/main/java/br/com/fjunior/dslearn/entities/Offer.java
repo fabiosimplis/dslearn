@@ -1,11 +1,19 @@
 package br.com.fjunior.dslearn.entities;
 
-import jakarta.persistence.*;
-
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_offer")
@@ -25,7 +33,10 @@ public class Offer {
     private Course course;
 
     @OneToMany(mappedBy = "offer")
-    private List<Resource> resources = new ArrayList<>();  
+    private List<Resource> resources = new ArrayList<>();
+
+    @OneToMany(mappedBy = "offer")
+	private List<Topic> topics = new ArrayList<>();	
 
     public Offer(){
     }
@@ -80,6 +91,10 @@ public class Offer {
 
     public List<Resource> getResources() {
         return resources;
+    }
+
+    public List<Topic> getTopics(){
+        return topics;
     }
 
     @Override

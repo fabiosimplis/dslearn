@@ -1,7 +1,9 @@
 package br.com.fjunior.dslearn.entities;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import jakarta.persistence.Column;
@@ -13,6 +15,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -40,12 +43,19 @@ public class Topic {
     @JoinColumn(name = "lesson_id")
     private Lesson lesson;
 
+    @ManyToOne
+	@JoinColumn(name = "reply_id")
+	private Reply answer;
+
     @ManyToMany
     @JoinTable(name = "tb_topic-likes",
         joinColumns = @JoinColumn(name = "topic_id"),
         inverseJoinColumns = @JoinColumn(name = "user_id")
     )
     private Set<User> likes = new HashSet<>();
+
+    @OneToMany(mappedBy = "topic")
+	private List<Reply> replies = new ArrayList<>();
 
     public Topic() {
     }
