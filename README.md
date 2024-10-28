@@ -15,16 +15,13 @@ Cada nova turma do curso corresponde a uma oferta ou edição deste curso, que p
 
 
 ## Modelo conceitual
-![Modelo Conceitual]().
+![Modelo Conceitual](https://github.com/fabiosimplis/dslearn/blob/main/assets/modelo-conceitual-com-forum.png).
 
 # Tecnologias utilizadas
 ## Back end
 - Java
 - Spring Boot
-- JPA / Hibernate
-- SQL
-- Maven
-- JWT
+- JPA
 
 # Como executar o projeto
 
@@ -33,7 +30,7 @@ Pré-requisitos: Java 17
 
 ```bash
 # clonar repositório
-git clone 
+git clone https://github.com/fabiosimplis/dslearn.git
 
 # entrar na pasta do projeto back end
 cd dslearn
