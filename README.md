@@ -13,6 +13,8 @@ Uma tarefa pode ter um peso, uma data de entrega, um número de questões e a qu
 
 Cada nova turma do curso corresponde a uma oferta ou edição deste curso, que possui uma data de início e fim. Diferentes ofertas do mesmo curso podem ter pequenas variações no conteúdo, conforme a necessidade de customização para cada turma.
 
+## Protótipos de tela
+[FIGMA](https://www.figma.com/design/p8Hawp1w5g0pCZ3h3ZsCUd/DSLearn-Bootcamp)
 
 ## Modelo conceitual
 ![Modelo Conceitual](https://github.com/fabiosimplis/dslearn/blob/main/assets/modelo-conceitual-com-forum.png).
