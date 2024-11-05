@@ -3,7 +3,7 @@
 
 # Sobre o projeto
 
-DScommerce é uma aplicação back end web construída em conjunto ao curso **Java Spring Reference**, da plataforma [DevSuperior](https://devsuperior.com "Site da DevSuperior"), para estudo de domínio complexo.
+DSLearn é uma aplicação back end web construída em conjunto ao curso **Java Spring Reference**, da plataforma [DevSuperior](https://devsuperior.com "Site da DevSuperior"), para estudo de domínio complexo.
 
 O sistema consiste em uma plataforma de ensino que mantém informações de cursos, suas turmas e alunos, bem como um fórum para perguntas e respostas sobre os conteúdos do curso. Os atores do sistema podem ser alunos e professores. Há também usuários administradores, que são os únicos autorizados a cadastrar cursos e turmas.
 
